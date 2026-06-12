@@ -1,0 +1,38 @@
+{
+  "name": "CINEVERSE — Cinematic Universe",
+  "short_name": "CINEVERSE",
+  "description": "Your free movie streaming app — every genre, every era, one tap away.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a0a0f",
+  "theme_color": "#ff3860",
+  "lang": "en",
+  "categories": ["entertainment"],
+  "icons": [
+    {
+      "src": "https://placehold.co/72x72/ff3860/ffffff?text=CV",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://placehold.co/96x96/ff3860/ffffff?text=CV",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://placehold.co/192x192/ff3860/ffffff?text=CV",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://placehold.co/512x512/ff3860/ffffff?text=CV",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
