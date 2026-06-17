@@ -15,6 +15,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;800&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@1,800;1,900&display=swap" rel="stylesheet">
 
+<!-- ===== ALL AD SCRIPTS PRE-LOADED IN HEAD ===== -->
+<!-- Social Bar / Native -->
+<script src="https://pl29727567.effectivecpmnetwork.com/57/6e/48/576e480ea2f1c630ed4d45f40e2260d5.js"></script>
+
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   :root {
@@ -34,8 +38,6 @@
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
   }
-
-  /* ============ ANIMATED BACKGROUND ============ */
   body::before {
     content: '';
     position: fixed;
@@ -51,8 +53,6 @@
     0% { transform: translate(0, 0) rotate(0deg); }
     100% { transform: translate(5%, -5%) rotate(8deg); }
   }
-
-  /* Floating film grain */
   body::after {
     content: '';
     position: fixed;
@@ -66,8 +66,6 @@
     pointer-events: none;
     opacity: 0.6;
   }
-
-  /* Custom cursor follow (desktop) */
   .cursor-glow {
     position: fixed;
     width: 300px;
@@ -82,11 +80,8 @@
     opacity: 0;
     will-change: transform;
   }
-  @media (hover: hover) {
-    .cursor-glow { opacity: 1; }
-  }
+  @media (hover: hover) { .cursor-glow { opacity: 1; } }
 
-  /* ============ HEADER ============ */
   header {
     padding: 20px 16px 12px;
     display: flex;
@@ -134,7 +129,6 @@
     50% { opacity: 0.6; transform: scale(1.2); box-shadow: 0 0 0 6px rgba(74,222,128,0); }
   }
 
-  /* ============ HERO ============ */
   .hero {
     text-align: center;
     padding: 30px 16px 20px;
@@ -179,7 +173,6 @@
     animation: slideUp 0.9s 0.3s forwards;
   }
 
-  /* ============ SEARCH ============ */
   .search-wrap {
     margin: 30px auto 16px;
     max-width: 640px;
@@ -218,22 +211,10 @@
     pointer-events: none;
   }
   @keyframes shimmer { to { background-position: 300% 0; } }
-  .search-bar:focus-within {
-    transform: translateY(-2px);
-    box-shadow: 0 20px 50px -20px rgba(255,56,96,0.6);
-  }
+  .search-bar:focus-within { transform: translateY(-2px); box-shadow: 0 20px 50px -20px rgba(255,56,96,0.6); }
   .search-bar:focus-within::before { opacity: 1; }
-
-  .search-icon {
-    width: 20px; height: 20px;
-    color: var(--muted);
-    flex-shrink: 0;
-    transition: all 0.4s;
-  }
-  .search-bar:focus-within .search-icon {
-    color: var(--accent);
-    transform: rotate(-90deg) scale(1.15);
-  }
+  .search-icon { width: 20px; height: 20px; color: var(--muted); flex-shrink: 0; transition: all 0.4s; }
+  .search-bar:focus-within .search-icon { color: var(--accent); transform: rotate(-90deg) scale(1.15); }
   .search-bar input {
     flex: 1;
     background: transparent;
@@ -266,23 +247,10 @@
   .search-clear.visible { opacity: 1; transform: scale(1) rotate(0); pointer-events: auto; }
   .search-clear:hover { background: var(--accent2); color: var(--bg); transform: scale(1.1) rotate(90deg); }
 
-  /* ============ CATEGORY TABS (genres) ============ */
-  .categories {
-    position: relative;
-    z-index: 2;
-    opacity: 0;
-    animation: slideUp 0.9s 0.7s forwards;
-  }
-  .cat-row {
-    display: flex;
-    gap: 8px;
-    overflow-x: auto;
-    padding: 14px 16px 6px;
-    scrollbar-width: none;
-  }
+  .categories { position: relative; z-index: 2; opacity: 0; animation: slideUp 0.9s 0.7s forwards; }
+  .cat-row { display: flex; gap: 8px; overflow-x: auto; padding: 14px 16px 6px; scrollbar-width: none; }
   .cat-row::-webkit-scrollbar { display: none; }
   .cat-row + .cat-row { padding-top: 0; }
-
   .chip {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
@@ -309,21 +277,11 @@
     transition: opacity 0.3s;
     z-index: -1;
   }
-  .chip:hover {
-    color: var(--text);
-    border-color: var(--accent);
-    transform: translateY(-2px);
-  }
-  .chip.active {
-    color: white;
-    border-color: transparent;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px -6px rgba(255,56,96,0.5);
-  }
+  .chip:hover { color: var(--text); border-color: var(--accent); transform: translateY(-2px); }
+  .chip.active { color: white; border-color: transparent; transform: translateY(-2px); box-shadow: 0 8px 20px -6px rgba(255,56,96,0.5); }
   .chip.active::before { opacity: 1; }
   .chip .ico { margin-right: 5px; }
 
-  /* ============ RESULT INFO ============ */
   .result-info {
     text-align: center;
     margin: 20px 0 16px;
@@ -337,19 +295,76 @@
   }
   .result-info b { color: var(--accent2); font-size: 13px; }
 
-  /* ============ GRID ============ */
+  /* ===== AD UNITS ===== */
+  .ad-unit {
+    text-align: center;
+    margin: 14px auto;
+    padding: 8px 4px;
+    background: rgba(255,255,255,0.02);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .ad-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7px;
+    letter-spacing: 0.18em;
+    color: rgba(255,255,255,0.12);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    width: 100%;
+    text-align: center;
+  }
+  /* Grid inline ad — spans full row */
+  .grid-ad-wrap {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 14px 0;
+    background: rgba(255,255,255,0.02);
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  /* Modal ad */
+  .modal-ad {
+    margin: 16px 0;
+    text-align: center;
+    padding: 10px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.07);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  /* Native / In-Page Push container */
+  .native-ad-wrap {
+    grid-column: 1 / -1;
+    overflow: hidden;
+    margin: 4px 0;
+  }
+
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 16px;
-    padding: 0 14px 60px;
+    padding: 0 14px 120px;
     max-width: 1600px;
     margin: 0 auto;
     position: relative;
     z-index: 2;
   }
   @media (min-width: 768px) {
-    .grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 26px; padding: 0 5vw 80px; }
+    .grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 26px; padding: 0 5vw 120px; }
   }
 
   .movie {
@@ -363,17 +378,10 @@
     opacity: 0;
     transition: transform 0.3s cubic-bezier(.2,.9,.3,1.2);
   }
-  .movie.in-view {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.7s, transform 0.7s cubic-bezier(.2,.9,.3,1.2);
-  }
+  .movie.in-view { opacity: 1; transform: translateY(0); transition: opacity 0.7s, transform 0.7s cubic-bezier(.2,.9,.3,1.2); }
   .movie:active { transform: scale(0.95); }
-
   @media (hover: hover) {
-    .movie {
-      transition: transform 0.5s cubic-bezier(.2,.9,.3,1.2), box-shadow 0.5s, z-index 0s 0.5s;
-    }
+    .movie { transition: transform 0.5s cubic-bezier(.2,.9,.3,1.2), box-shadow 0.5s, z-index 0s 0.5s; }
     .movie.in-view { transition: opacity 0.7s, transform 0.7s cubic-bezier(.2,.9,.3,1.2); }
     .movie.in-view:hover {
       transform: scale(1.15) translateY(-6px);
@@ -384,7 +392,6 @@
     .movie.in-view:hover .poster .title { transform: translateY(-4px); }
     .movie.in-view:hover .info { transform: translateY(0); }
   }
-
   .movie .poster {
     position: absolute;
     inset: 0;
@@ -443,8 +450,6 @@
     text-shadow: 0 1px 3px rgba(0,0,0,0.8);
   }
   .movie .poster .rating { color: var(--accent2); font-weight: 500; }
-
-  /* hover info card */
   .movie .info {
     position: absolute;
     inset: auto 0 0 0;
@@ -454,19 +459,8 @@
     transition: transform 0.5s cubic-bezier(.2,.9,.3,1.2);
     z-index: 3;
   }
-  .movie .info h3 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 20px;
-    letter-spacing: 0.03em;
-    margin-bottom: 4px;
-  }
-  .movie .info p {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    color: var(--muted);
-    text-transform: uppercase;
-  }
+  .movie .info h3 { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 0.03em; margin-bottom: 4px; }
+  .movie .info p { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: var(--muted); text-transform: uppercase; }
 
   .no-results, .loader {
     text-align: center;
@@ -481,14 +475,7 @@
     z-index: 2;
   }
   .no-results.show, .loader.show { display: block; }
-  .no-results .big {
-    display: block;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 60px;
-    color: var(--accent);
-    margin-bottom: 8px;
-    animation: glitch 3s infinite;
-  }
+  .no-results .big { display: block; font-family: 'Bebas Neue', sans-serif; font-size: 60px; color: var(--accent); margin-bottom: 8px; animation: glitch 3s infinite; }
   @keyframes glitch {
     0%, 90%, 100% { transform: translate(0); }
     91% { transform: translate(-3px, 0); text-shadow: 2px 0 var(--accent2), -2px 0 var(--accent3); }
@@ -508,7 +495,7 @@
   }
   @keyframes spin { to { transform: rotate(360deg); } }
 
-  /* ============ MODAL ============ */
+  /* MODAL */
   .modal-overlay {
     position: fixed;
     inset: 0;
@@ -532,23 +519,9 @@
     to { transform: none; opacity: 1; }
   }
   @media (min-width: 768px) {
-    .modal-overlay {
-      background: rgba(0,0,0,0.92);
-      backdrop-filter: blur(12px);
-      align-items: flex-start;
-      justify-content: center;
-      padding: 30px 20px;
-    }
+    .modal-overlay { background: rgba(0,0,0,0.92); backdrop-filter: blur(12px); align-items: flex-start; justify-content: center; padding: 30px 20px; }
     .modal-overlay.show { display: flex; }
-    .modal {
-      max-width: 900px;
-      min-height: auto;
-      max-height: calc(100vh - 60px);
-      overflow-y: auto;
-      border-radius: 20px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: var(--bg2);
-    }
+    .modal { max-width: 900px; min-height: auto; max-height: calc(100vh - 60px); overflow-y: auto; border-radius: 20px; border: 1px solid rgba(255,255,255,0.08); background: var(--bg2); }
   }
   .modal-close {
     position: fixed;
@@ -568,13 +541,7 @@
   }
   .modal-close:hover { background: var(--accent); transform: rotate(90deg); }
   @media (min-width: 768px) { .modal-close { position: absolute; } }
-  .modal-backdrop {
-    aspect-ratio: 16/9;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    background-color: var(--bg2);
-  }
+  .modal-backdrop { aspect-ratio: 16/9; background-size: cover; background-position: center; position: relative; background-color: var(--bg2); }
   .modal-backdrop::after {
     content: '';
     position: absolute;
@@ -587,12 +554,7 @@
   }
   .modal-content { padding: 0 18px 40px; margin-top: -50px; position: relative; z-index: 2; }
   @media (min-width: 768px) { .modal-content { padding: 0 32px 32px; margin-top: -60px; } }
-  .modal-content h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(28px, 6vw, 52px);
-    line-height: 1;
-    margin-bottom: 12px;
-  }
+  .modal-content h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 6vw, 52px); line-height: 1; margin-bottom: 12px; }
   .modal-meta {
     display: flex;
     gap: 10px 14px;
@@ -605,28 +567,9 @@
     margin-bottom: 18px;
   }
   .modal-meta span.rating { color: var(--accent2); }
-  .modal-overview {
-    font-size: 14px;
-    line-height: 1.6;
-    color: rgba(245,245,247,0.85);
-    margin-bottom: 24px;
-  }
-  .modal-section-title {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.25em;
-    color: var(--accent);
-    text-transform: uppercase;
-    margin-bottom: 10px;
-  }
-  .server-tabs {
-    display: flex;
-    gap: 8px;
-    overflow-x: auto;
-    margin-bottom: 12px;
-    padding-bottom: 4px;
-    scrollbar-width: none;
-  }
+  .modal-overview { font-size: 14px; line-height: 1.6; color: rgba(245,245,247,0.85); margin-bottom: 24px; }
+  .modal-section-title { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.25em; color: var(--accent); text-transform: uppercase; margin-bottom: 10px; }
+  .server-tabs { display: flex; gap: 8px; overflow-x: auto; margin-bottom: 12px; padding-bottom: 4px; scrollbar-width: none; }
   .server-tabs::-webkit-scrollbar { display: none; }
   .server-btn {
     background: rgba(255,255,255,0.05);
@@ -644,20 +587,9 @@
     transition: all 0.25s;
   }
   .server-btn:hover { color: var(--text); border-color: var(--accent); }
-  .server-btn.active {
-    background: var(--accent);
-    color: white;
-    border-color: var(--accent);
-  }
+  .server-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
   .player-wrap { position: relative; width: 100%; }
-  .modal-trailer {
-    width: 100%;
-    aspect-ratio: 16/9;
-    border-radius: 10px;
-    border: none;
-    background: #000;
-    display: block;
-  }
+  .modal-trailer { width: 100%; aspect-ratio: 16/9; border-radius: 10px; border: none; background: #000; display: block; }
   .fs-btn {
     position: absolute;
     top: 8px;
@@ -676,30 +608,10 @@
     align-items: center;
     gap: 6px;
   }
-  .player-wrap.fullscreen {
-    position: fixed;
-    inset: 0;
-    z-index: 200;
-    background: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .player-wrap.fullscreen .modal-trailer {
-    width: 100vw;
-    height: 100vh;
-    aspect-ratio: auto;
-    border-radius: 0;
-  }
+  .player-wrap.fullscreen { position: fixed; inset: 0; z-index: 200; background: #000; display: flex; align-items: center; justify-content: center; }
+  .player-wrap.fullscreen .modal-trailer { width: 100vw; height: 100vh; aspect-ratio: auto; border-radius: 0; }
   .player-wrap.fullscreen .fs-btn { top: 12px; right: 12px; background: rgba(0,0,0,0.9); padding: 10px 14px; }
-  .player-note {
-    font-size: 10px;
-    color: var(--muted);
-    margin-top: 10px;
-    font-family: 'JetBrains Mono', monospace;
-    letter-spacing: 0.1em;
-    line-height: 1.6;
-  }
+  .player-note { font-size: 10px; color: var(--muted); margin-top: 10px; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.1em; line-height: 1.6; }
   .open-external {
     display: inline-block;
     margin-top: 12px;
@@ -716,107 +628,27 @@
   }
   .open-external:hover { background: var(--accent2); color: var(--bg); transform: translateY(-2px); }
 
-  /* ============ AD BANNERS ============ */
-  .ad-banner {
-    width: 100%;
-    text-align: center;
-    margin: 18px auto;
-    padding: 8px 0;
-    background: rgba(255,255,255,0.03);
-    border-top: 1px solid rgba(255,255,255,0.07);
-    border-bottom: 1px solid rgba(255,255,255,0.07);
-    overflow: hidden;
-    position: relative;
-    z-index: 2;
-  }
-  .ad-banner-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 8px;
-    letter-spacing: 0.2em;
-    color: rgba(255,255,255,0.15);
-    text-transform: uppercase;
-    margin-bottom: 6px;
-  }
-  /* Ad inside grid takes full row */
-  .grid-ad {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: 14px 0;
-    background: rgba(255,255,255,0.02);
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.06);
-    overflow: hidden;
-  }
-  /* Modal ad banner */
-  .modal-ad {
-    margin: 18px 0;
-    text-align: center;
-    padding: 10px;
-    background: rgba(255,255,255,0.03);
-    border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.07);
-    overflow: hidden;
-  }
-
-
-  /* ============ AD UNITS ============ */
-  .ad-unit {
-    text-align: center;
-    margin: 14px auto;
-    padding: 8px 4px;
-    background: rgba(255,255,255,0.02);
-    border-top: 1px solid rgba(255,255,255,0.06);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    overflow: hidden;
-    position: relative;
-    z-index: 2;
-  }
-  .ad-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 7px;
-    letter-spacing: 0.18em;
-    color: rgba(255,255,255,0.12);
-    text-transform: uppercase;
-    margin-bottom: 5px;
-  }
-  .grid-ad {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: 12px 0;
-    background: rgba(255,255,255,0.02);
-    border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.05);
-    overflow: hidden;
-    margin: 4px 0;
-  }
-  .modal-ad {
-    margin: 16px 0;
-    text-align: center;
-    padding: 10px;
-    background: rgba(255,255,255,0.03);
-    border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.07);
-    overflow: hidden;
-  }
-  .modal-ad .ad-label { margin-bottom: 6px; }
+  /* Sticky Bottom Ad */
   #stickyBottomAd {
-    position: fixed; bottom: 0; left: 0; right: 0;
-    z-index: 9998; text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9998;
+    text-align: center;
     background: rgba(10,10,15,0.97);
     border-top: 1px solid rgba(255,56,96,0.25);
     padding: 4px 0 2px;
     display: none;
   }
-  #sidebarLeft, #sidebarRight {
-    position: fixed; top: 50%; transform: translateY(-50%);
-    z-index: 9997; display: none;
-  }
-  #sidebarLeft { left: 0; }
-  #sidebarRight { right: 0; }
+
+  /* Sidebar Ads */
+  #sidebarLeft { position: fixed; top: 50%; left: 0; transform: translateY(-50%); z-index: 9997; display: none; }
+  #sidebarRight { position: fixed; top: 50%; right: 0; transform: translateY(-50%); z-index: 9997; display: none; }
 
   footer {
     text-align: center;
-    padding: 30px 20px 40px;
+    padding: 30px 20px 80px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 9px;
     letter-spacing: 0.25em;
@@ -826,12 +658,9 @@
     z-index: 2;
   }
   footer span { color: var(--accent); animation: heartbeat 1.5s ease-in-out infinite; display: inline-block; }
-  @keyframes heartbeat {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.3); }
-  }
+  @keyframes heartbeat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.3); } }
 
-  /* ============ APP DOWNLOAD BANNER ============ */
+  /* App Banner */
   .app-banner {
     position: relative;
     z-index: 10;
@@ -858,183 +687,39 @@
     animation: shimmer 4s linear infinite;
     pointer-events: none;
   }
-  .app-banner-left {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex: 1;
-    min-width: 0;
-  }
+  .app-banner-left { display: flex; align-items: center; gap: 12px; flex: 1; min-width: 0; }
   .app-banner-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
+    width: 48px; height: 48px; border-radius: 12px;
     background: linear-gradient(135deg, var(--accent), var(--accent3));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; flex-shrink: 0;
     box-shadow: 0 8px 20px rgba(255,56,96,0.4);
   }
-  .app-banner-text {
-    min-width: 0;
-  }
-  .app-banner-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 18px;
-    letter-spacing: 0.05em;
-    background: linear-gradient(90deg, var(--accent), var(--accent2));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    line-height: 1.1;
-  }
-  .app-banner-sub {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.15em;
-    color: var(--muted);
-    text-transform: uppercase;
-    margin-top: 2px;
-  }
-  .app-banner-btns {
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-    flex-shrink: 0;
-  }
-  .app-btn {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    padding: 8px 14px;
-    border-radius: 999px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    text-decoration: none;
-    cursor: pointer;
-    border: none;
-    transition: all 0.25s cubic-bezier(.2,.9,.3,1.2);
-    white-space: nowrap;
-  }
-  .app-btn-android {
-    background: linear-gradient(90deg, #4ade80, #22c55e);
-    color: #0a0a0f;
-    font-weight: 700;
-  }
+  .app-banner-text { min-width: 0; }
+  .app-banner-title { font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 0.05em; background: linear-gradient(90deg, var(--accent), var(--accent2)); -webkit-background-clip: text; background-clip: text; color: transparent; line-height: 1.1; }
+  .app-banner-sub { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.15em; color: var(--muted); text-transform: uppercase; margin-top: 2px; }
+  .app-banner-btns { display: flex; flex-direction: column; gap: 7px; flex-shrink: 0; }
+  .app-btn { display: flex; align-items: center; gap: 7px; padding: 8px 14px; border-radius: 999px; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; cursor: pointer; border: none; transition: all 0.25s cubic-bezier(.2,.9,.3,1.2); white-space: nowrap; }
+  .app-btn-android { background: linear-gradient(90deg, #4ade80, #22c55e); color: #0a0a0f; font-weight: 700; }
   .app-btn-android:hover { transform: translateY(-2px) scale(1.04); box-shadow: 0 10px 24px rgba(74,222,128,0.4); }
-  .app-btn-ios {
-    background: rgba(255,255,255,0.08);
-    color: var(--text);
-    border: 1px solid rgba(255,255,255,0.15);
-  }
+  .app-btn-ios { background: rgba(255,255,255,0.08); color: var(--text); border: 1px solid rgba(255,255,255,0.15); }
   .app-btn-ios:hover { transform: translateY(-2px) scale(1.04); background: rgba(255,255,255,0.15); }
-  .app-banner-close {
-    position: absolute;
-    top: 8px;
-    right: 10px;
-    background: none;
-    border: none;
-    color: var(--muted);
-    font-size: 14px;
-    cursor: pointer;
-    padding: 4px;
-    line-height: 1;
-    transition: color 0.2s;
-  }
+  .app-banner-close { position: absolute; top: 8px; right: 10px; background: none; border: none; color: var(--muted); font-size: 14px; cursor: pointer; padding: 4px; line-height: 1; transition: color 0.2s; }
   .app-banner-close:hover { color: var(--accent); }
 
-  /* Install Modal */
-  .install-modal {
-    position: fixed;
-    inset: 0;
-    z-index: 300;
-    background: rgba(0,0,0,0.85);
-    backdrop-filter: blur(12px);
-    display: none;
-    align-items: flex-end;
-    justify-content: center;
-    padding: 20px;
-  }
+  /* Install Modals */
+  .install-modal { position: fixed; inset: 0; z-index: 300; background: rgba(0,0,0,0.85); backdrop-filter: blur(12px); display: none; align-items: flex-end; justify-content: center; padding: 20px; }
   .install-modal.show { display: flex; animation: fadeIn 0.3s; }
-  .install-box {
-    background: var(--bg2);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 24px;
-    padding: 28px 24px 24px;
-    width: 100%;
-    max-width: 460px;
-    animation: modalIn 0.4s cubic-bezier(.2,.9,.3,1.2);
-  }
-  .install-box h3 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 28px;
-    letter-spacing: 0.04em;
-    margin-bottom: 6px;
-    background: linear-gradient(90deg, var(--accent), var(--accent2));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  .install-box p {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    color: var(--muted);
-    letter-spacing: 0.12em;
-    margin-bottom: 20px;
-    line-height: 1.6;
-    text-transform: uppercase;
-  }
-  .install-steps {
-    list-style: none;
-    margin-bottom: 22px;
-  }
-  .install-steps li {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    font-family: 'Syne', sans-serif;
-    font-size: 13px;
-    color: var(--text);
-    line-height: 1.4;
-  }
+  .install-box { background: var(--bg2); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 28px 24px 24px; width: 100%; max-width: 460px; animation: modalIn 0.4s cubic-bezier(.2,.9,.3,1.2); }
+  .install-box h3 { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 0.04em; margin-bottom: 6px; background: linear-gradient(90deg, var(--accent), var(--accent2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .install-box p { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); letter-spacing: 0.12em; margin-bottom: 20px; line-height: 1.6; text-transform: uppercase; }
+  .install-steps { list-style: none; margin-bottom: 22px; }
+  .install-steps li { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-family: 'Syne', sans-serif; font-size: 13px; color: var(--text); line-height: 1.4; }
   .install-steps li:last-child { border-bottom: none; }
-  .step-num {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent), var(--accent3));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 13px;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-  .install-close-btn {
-    width: 100%;
-    padding: 13px;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    color: var(--muted);
-    border-radius: 999px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
+  .step-num { width: 24px; height: 24px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent3)); display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 13px; flex-shrink: 0; margin-top: 1px; }
+  .install-close-btn { width: 100%; padding: 13px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: var(--muted); border-radius: 999px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; transition: all 0.2s; }
   .install-close-btn:hover { background: rgba(255,255,255,0.1); color: var(--text); }
 </style>
-
-
 </head>
 <body>
 
@@ -1045,7 +730,7 @@
   <div class="tag"><span class="dot"></span>LIVE · POWERED BY TMDB</div>
 </header>
 
-<!-- ===== APP DOWNLOAD BANNER ===== -->
+<!-- APP DOWNLOAD BANNER -->
 <div class="app-banner" id="appBanner">
   <button class="app-banner-close" onclick="document.getElementById('appBanner').style.display='none'">✕</button>
   <div class="app-banner-left">
@@ -1056,96 +741,73 @@
     </div>
   </div>
   <div class="app-banner-btns">
-    <a class="app-btn app-btn-android" href="https://cinverse-henna.vercel.app/" id="androidBtn" onclick="showAndroidInstall(event)">
-      🤖 Android
-    </a>
-    <button class="app-btn app-btn-ios" onclick="showIOSInstall()">
-      🍎 iPhone
-    </button>
+    <a class="app-btn app-btn-android" href="https://cinverse-henna.vercel.app/" id="androidBtn" onclick="showAndroidInstall(event)">🤖 Android</a>
+    <button class="app-btn app-btn-ios" onclick="showIOSInstall()">🍎 iPhone</button>
   </div>
 </div>
 
-<!-- ===== ANDROID INSTALL MODAL ===== -->
+<!-- ANDROID INSTALL MODAL -->
 <div class="install-modal" id="androidModal">
   <div class="install-box">
     <h3>📱 Android Install</h3>
     <p>Free APK — No Play Store needed</p>
     <ul class="install-steps">
-      <li>
-        <span class="step-num">1</span>
-        <span>Neeche <b>Download APK</b> button tap karo</span>
-      </li>
-      <li>
-        <span class="step-num">2</span>
-        <span>Phone mein <b>Settings → Security → Unknown Sources</b> ON karo</span>
-      </li>
-      <li>
-        <span class="step-num">3</span>
-        <span>Downloaded APK file open karo aur <b>Install</b> tap karo</span>
-      </li>
-      <li>
-        <span class="step-num">4</span>
-        <span>Home screen par <b>CINEVERSE</b> icon aa jayega ✅</span>
-      </li>
+      <li><span class="step-num">1</span><span>Neeche <b>Download APK</b> button tap karo</span></li>
+      <li><span class="step-num">2</span><span>Phone mein <b>Settings → Security → Unknown Sources</b> ON karo</span></li>
+      <li><span class="step-num">3</span><span>Downloaded APK file open karo aur <b>Install</b> tap karo</span></li>
+      <li><span class="step-num">4</span><span>Home screen par <b>CINEVERSE</b> icon aa jayega ✅</span></li>
     </ul>
-    <a href="https://cinverse-henna.vercel.app/" onclick="showPWABuilder()" style="display:block;width:100%;padding:14px;background:linear-gradient(90deg,#4ade80,#22c55e);color:#0a0a0f;text-align:center;border-radius:999px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;font-weight:700;margin-bottom:10px;transition:all 0.2s;" id="apkDownloadBtn">⬇ Get APK via PWABuilder</a>
+    <a href="https://cinverse-henna.vercel.app/" onclick="showPWABuilder()" style="display:block;width:100%;padding:14px;background:linear-gradient(90deg,#4ade80,#22c55e);color:#0a0a0f;text-align:center;border-radius:999px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;font-weight:700;margin-bottom:10px;" id="apkDownloadBtn">⬇ Get APK via PWABuilder</a>
     <button class="install-close-btn" onclick="document.getElementById('androidModal').classList.remove('show')">Close</button>
   </div>
 </div>
 
-<!-- ===== IOS INSTALL MODAL ===== -->
+<!-- IOS INSTALL MODAL -->
 <div class="install-modal" id="iosModal">
   <div class="install-box">
     <h3>🍎 iPhone Install</h3>
     <p>Safari se Home Screen par add karo — Free!</p>
     <ul class="install-steps">
-      <li>
-        <span class="step-num">1</span>
-        <span><b>Safari</b> browser mein website kholo (Chrome pe kaam nahi karega)</span>
-      </li>
-      <li>
-        <span class="step-num">2</span>
-        <span>Neeche Share button <b>[ ↑ ]</b> tap karo</span>
-      </li>
-      <li>
-        <span class="step-num">3</span>
-        <span><b>"Add to Home Screen"</b> select karo</span>
-      </li>
-      <li>
-        <span class="step-num">4</span>
-        <span>Upar <b>"Add"</b> tap karo — App install ho jayegi! ✅</span>
-      </li>
+      <li><span class="step-num">1</span><span><b>Safari</b> browser mein website kholo (Chrome pe kaam nahi karega)</span></li>
+      <li><span class="step-num">2</span><span>Neeche Share button <b>[ ↑ ]</b> tap karo</span></li>
+      <li><span class="step-num">3</span><span><b>"Add to Home Screen"</b> select karo</span></li>
+      <li><span class="step-num">4</span><span>Upar <b>"Add"</b> tap karo — App install ho jayegi! ✅</span></li>
     </ul>
     <a href="https://cinverse-henna.vercel.app/" target="_blank" style="display:block;width:100%;padding:14px;background:linear-gradient(90deg,var(--accent),var(--accent3));color:white;text-align:center;border-radius:999px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;font-weight:700;margin-bottom:10px;">🌐 Safari Mein Kholo</a>
     <button class="install-close-btn" onclick="document.getElementById('iosModal').classList.remove('show')">Close</button>
   </div>
 </div>
 
-<!-- ===== MOBILE STICKY BOTTOM BANNER ===== -->
-  <script src="https://www.highperformanceformat.com/01406bf2f9da45b9b284191991fec8ea/invoke.js"></script>
+<!-- ===== AD ZONE 1: Top Banner (468x60) ===== -->
+<div class="ad-unit">
+  <div class="ad-label">Advertisement</div>
+  <script>atOptions={'key':'9034fb899f3dc110d28d2230af2d6470','format':'iframe','height':60,'width':468,'params':{}};</script>
+  <script src="https://www.highperformanceformat.com/9034fb899f3dc110d28d2230af2d6470/invoke.js"></script>
 </div>
-<script>
-  // Show sticky bottom only on mobile
-  if (window.innerWidth <= 768) {
-    document.getElementById('stickyBottomAd').style.display = 'block';
-  }
-</script>
 
+<!-- ===== AD ZONE 2: Leaderboard (728x90) ===== -->
+<div class="ad-unit">
+  <div class="ad-label">Advertisement</div>
+  <script>atOptions={'key':'0ec6520605740ebc09f5662baa0dd646','format':'iframe','height':90,'width':728,'params':{}};</script>
+  <script src="https://www.highperformanceformat.com/0ec6520605740ebc09f5662baa0dd646/invoke.js"></script>
+</div>
 
-<div class="ad-unit"><div class="ad-label">Advertisement</div>
-<script>atOptions={'key':'9034fb899f3dc110d28d2230af2d6470','format':'iframe','height':60,'width':468,'params':{}};</script>
-<script src="https://www.highperformanceformat.com/9034fb899f3dc110d28d2230af2d6470/invoke.js"></script></div>
-<div class="ad-unit"><div class="ad-label">Advertisement</div>
-<script>atOptions={'key':'0ec6520605740ebc09f5662baa0dd646','format':'iframe','height':90,'width':728,'params':{}};</script>
-<script src="https://www.highperformanceformat.com/0ec6520605740ebc09f5662baa0dd646/invoke.js"></script></div>
 <section class="hero">
   <h1>Your <span class="em">Cinematic</span> Universe.</h1>
   <p>· every genre · every era · one tap away ·</p>
 </section>
 
+<!-- ===== AD ZONE 3: Native / In-Page Push ===== -->
+<div class="ad-unit">
+  <div class="ad-label">Advertisement</div>
+  <div id="native-ad-container-1"></div>
+</div>
 
-<div class="ad-unit"><div class="ad-label">Advertisement</div>
-
+<!-- ===== AD ZONE 4: 300x250 Rectangle ===== -->
+<div class="ad-unit">
+  <div class="ad-label">Advertisement</div>
+  <script>atOptions={'key':'ec2b4b53adbc239be103063b902d04a0','format':'iframe','height':250,'width':300,'params':{}};</script>
+  <script src="https://www.highperformanceformat.com/ec2b4b53adbc239be103063b902d04a0/invoke.js"></script>
 </div>
 
 <div class="search-wrap">
@@ -1159,16 +821,18 @@
   </div>
 </div>
 
-<!-- Two rows of category chips -->
 <div class="categories">
   <div class="cat-row" id="catRow1"></div>
   <div class="cat-row" id="catRow2"></div>
 </div>
 
+<!-- ===== AD ZONE 5: Second Leaderboard ===== -->
+<div class="ad-unit">
+  <div class="ad-label">Advertisement</div>
+  <script>atOptions={'key':'9034fb899f3dc110d28d2230af2d6470','format':'iframe','height':60,'width':468,'params':{}};</script>
+  <script src="https://www.highperformanceformat.com/9034fb899f3dc110d28d2230af2d6470/invoke.js"></script>
+</div>
 
-<div class="ad-unit"><div class="ad-label">Advertisement</div>
-<script>atOptions={'key':'ec2b4b53adbc239be103063b902d04a0','format':'iframe','height':250,'width':300,'params':{}};</script>
-<script src="https://www.highperformanceformat.com/ec2b4b53adbc239be103063b902d04a0/invoke.js"></script></div>
 <div class="result-info"><b id="count">0</b> &nbsp;/&nbsp; <span id="total">0</span> &nbsp;films loaded</div>
 
 <div class="loader show" id="loader">
@@ -1181,6 +845,20 @@
 <div class="no-results" id="noResults">
   <span class="big">404</span>
   No film found in this dimension.
+</div>
+
+<!-- ===== AD ZONE 6: After Grid ===== -->
+<div class="ad-unit">
+  <div class="ad-label">Advertisement</div>
+  <script>atOptions={'key':'0ec6520605740ebc09f5662baa0dd646','format':'iframe','height':90,'width':728,'params':{}};</script>
+  <script src="https://www.highperformanceformat.com/0ec6520605740ebc09f5662baa0dd646/invoke.js"></script>
+</div>
+
+<!-- ===== AD ZONE 7: 300x250 After Grid ===== -->
+<div class="ad-unit">
+  <div class="ad-label">Advertisement</div>
+  <script>atOptions={'key':'ec2b4b53adbc239be103063b902d04a0','format':'iframe','height':250,'width':300,'params':{}};</script>
+  <script src="https://www.highperformanceformat.com/ec2b4b53adbc239be103063b902d04a0/invoke.js"></script>
 </div>
 
 <!-- MODAL -->
@@ -1197,19 +875,37 @@
   </div>
 </div>
 
-
-
-
-
-
-<div class="ad-unit"><div class="ad-label">Advertisement</div>
-<script>atOptions={'key':'0ec6520605740ebc09f5662baa0dd646','format':'iframe','height':90,'width':728,'params':{}};</script>
-<script src="https://www.highperformanceformat.com/0ec6520605740ebc09f5662baa0dd646/invoke.js"></script></div>
-<div class="ad-unit"><div class="ad-label">Advertisement</div>
-<script>atOptions={'key':'ec2b4b53adbc239be103063b902d04a0','format':'iframe','height':250,'width':300,'params':{}};</script>
-<script src="https://www.highperformanceformat.com/ec2b4b53adbc239be103063b902d04a0/invoke.js"></script></div>
+<!-- ===== AD ZONE 8: Footer Leaderboard ===== -->
+<div class="ad-unit">
+  <div class="ad-label">Advertisement</div>
+  <script>atOptions={'key':'9034fb899f3dc110d28d2230af2d6470','format':'iframe','height':60,'width':468,'params':{}};</script>
+  <script src="https://www.highperformanceformat.com/9034fb899f3dc110d28d2230af2d6470/invoke.js"></script>
+</div>
 
 <footer>© 2026 Cineverse · made with <span>♥</span> for cinephiles</footer>
+
+<!-- ===== STICKY BOTTOM AD (Mobile) ===== -->
+<div id="stickyBottomAd">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:0.15em;color:rgba(255,255,255,0.12);text-transform:uppercase;margin-bottom:3px;">Advertisement</div>
+  <script>atOptions={'key':'01406bf2f9da45b9b284191991fec8ea','format':'iframe','height':50,'width':320,'params':{}};</script>
+  <script src="https://www.highperformanceformat.com/01406bf2f9da45b9b284191991fec8ea/invoke.js"></script>
+</div>
+
+<!-- ===== SIDEBAR LEFT (Desktop ≥1400px) ===== -->
+<div id="sidebarLeft">
+  <script>atOptions={'key':'cffa84bc7782c39e99aacc989b5be953','format':'iframe','height':600,'width':160,'params':{}};</script>
+  <script src="https://www.highperformanceformat.com/cffa84bc7782c39e99aacc989b5be953/invoke.js"></script>
+</div>
+
+<!-- ===== SIDEBAR RIGHT (Desktop ≥1400px) ===== -->
+<div id="sidebarRight">
+  <script>atOptions={'key':'92da101dd8a978897918e92d2ea916b9','format':'iframe','height':300,'width':160,'params':{}};</script>
+  <script src="https://www.highperformanceformat.com/92da101dd8a978897918e92d2ea916b9/invoke.js"></script>
+</div>
+
+<!-- ===== IN-PAGE PUSH / NATIVE AD ===== -->
+<script async="async" data-cfasync="false" src="https://pl29727568.effectivecpmnetwork.com/d61982d6cd459e2e1db4b34ef29269bb/invoke.js"></script>
+<div id="container-d61982d6cd459e2e1db4b34ef29269bb"></div>
 
 <script>
   const API_KEY = '847867524ffc4902379ee49173684256';
@@ -1217,15 +913,12 @@
   const IMG = 'https://image.tmdb.org/t/p/w500';
   const IMG_HD = 'https://image.tmdb.org/t/p/original';
 
-  // TMDB genre IDs
   const CATEGORIES = [
-    // Row 1: collections
     { name: 'Popular', type: 'list', value: 'popular', ico: '🔥' },
     { name: 'Top Rated', type: 'list', value: 'top_rated', ico: '⭐' },
     { name: 'Now Playing', type: 'list', value: 'now_playing', ico: '▶' },
     { name: 'Upcoming', type: 'list', value: 'upcoming', ico: '⏭' },
     { name: 'Trending', type: 'trending', value: 'day', ico: '⚡' },
-    // Row 2: genres
     { name: 'Action', type: 'genre', value: 28, ico: '💥' },
     { name: 'Adventure', type: 'genre', value: 12, ico: '🗺' },
     { name: 'Romance', type: 'genre', value: 10749, ico: '❤' },
@@ -1267,7 +960,55 @@
   let searchTimeout = null;
   let activeRequest = 0;
 
-  // Render category chips
+  // ===== AD TEMPLATES (created as DOM nodes to avoid script injection issues) =====
+  function makeAdNode_300x250() {
+    const wrap = document.createElement('div');
+    wrap.className = 'grid-ad-wrap';
+    const label = document.createElement('div');
+    label.className = 'ad-label';
+    label.textContent = 'Advertisement';
+    wrap.appendChild(label);
+    const s1 = document.createElement('script');
+    s1.text = "atOptions={'key':'ec2b4b53adbc239be103063b902d04a0','format':'iframe','height':250,'width':300,'params':{}};";
+    wrap.appendChild(s1);
+    const s2 = document.createElement('script');
+    s2.src = 'https://www.highperformanceformat.com/ec2b4b53adbc239be103063b902d04a0/invoke.js';
+    wrap.appendChild(s2);
+    return wrap;
+  }
+
+  function makeAdNode_728x90() {
+    const wrap = document.createElement('div');
+    wrap.className = 'grid-ad-wrap';
+    const label = document.createElement('div');
+    label.className = 'ad-label';
+    label.textContent = 'Advertisement';
+    wrap.appendChild(label);
+    const s1 = document.createElement('script');
+    s1.text = "atOptions={'key':'0ec6520605740ebc09f5662baa0dd646','format':'iframe','height':90,'width':728,'params':{}};";
+    wrap.appendChild(s1);
+    const s2 = document.createElement('script');
+    s2.src = 'https://www.highperformanceformat.com/0ec6520605740ebc09f5662baa0dd646/invoke.js';
+    wrap.appendChild(s2);
+    return wrap;
+  }
+
+  function makeAdNode_468x60() {
+    const wrap = document.createElement('div');
+    wrap.className = 'grid-ad-wrap';
+    const label = document.createElement('div');
+    label.className = 'ad-label';
+    label.textContent = 'Advertisement';
+    wrap.appendChild(label);
+    const s1 = document.createElement('script');
+    s1.text = "atOptions={'key':'9034fb899f3dc110d28d2230af2d6470','format':'iframe','height':60,'width':468,'params':{}};";
+    wrap.appendChild(s1);
+    const s2 = document.createElement('script');
+    s2.src = 'https://www.highperformanceformat.com/9034fb899f3dc110d28d2230af2d6470/invoke.js';
+    wrap.appendChild(s2);
+    return wrap;
+  }
+
   function renderCategories() {
     CATEGORIES.forEach((cat, i) => {
       const chip = document.createElement('div');
@@ -1281,30 +1022,20 @@
         clearBtn.classList.remove('visible');
         loadCategory(cat);
       });
-      // first 5 in row 1, rest in row 2
       if (i < 5) catRow1.appendChild(chip);
       else catRow2.appendChild(chip);
     });
   }
 
   function buildUrl(cat, page) {
-    if (cat.type === 'list') {
-      return `${BASE}/movie/${cat.value}?api_key=${API_KEY}&language=en-US&page=${page}`;
-    }
-    if (cat.type === 'trending') {
-      return `${BASE}/trending/movie/${cat.value}?api_key=${API_KEY}&page=${page}`;
-    }
-    if (cat.type === 'genre') {
-      return `${BASE}/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&with_genres=${cat.value}&page=${page}`;
-    }
-    if (cat.type === 'classic') {
-      // Movies before 1990, sorted by rating
-      return `${BASE}/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=vote_average.desc&vote_count.gte=500&primary_release_date.lte=1990-12-31&page=${page}`;
-    }
+    if (cat.type === 'list') return `${BASE}/movie/${cat.value}?api_key=${API_KEY}&language=en-US&page=${page}`;
+    if (cat.type === 'trending') return `${BASE}/trending/movie/${cat.value}?api_key=${API_KEY}&page=${page}`;
+    if (cat.type === 'genre') return `${BASE}/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&with_genres=${cat.value}&page=${page}`;
+    if (cat.type === 'classic') return `${BASE}/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=vote_average.desc&vote_count.gte=500&primary_release_date.lte=1990-12-31&page=${page}`;
     return '';
   }
 
-  async function fetchMultiplePages(urlBuilder, pages = 3) {
+  async function fetchMultiplePages(urlBuilder, pages = 4) {
     const myRequest = ++activeRequest;
     loader.classList.add('show');
     grid.innerHTML = '';
@@ -1330,78 +1061,71 @@
     } catch (err) {
       console.error(err);
       if (myRequest === activeRequest) {
-        grid.innerHTML = '<p style="color:var(--muted); text-align:center; padding: 40px; grid-column: 1/-1;">Failed to load. Check your internet.</p>';
+        grid.innerHTML = '<p style="color:var(--muted);text-align:center;padding:40px;grid-column:1/-1;">Failed to load. Check your internet.</p>';
       }
     } finally {
       if (myRequest === activeRequest) loader.classList.remove('show');
     }
   }
 
-  function loadCategory(cat) {
-    fetchMultiplePages(p => buildUrl(cat, p), 4);
-  }
-
-  function searchMovies(query) {
-    fetchMultiplePages(p => `${BASE}/search/movie?api_key=${API_KEY}&language=en-US&query=${encodeURIComponent(query)}&page=${p}&include_adult=false`, 3);
-  }
+  function loadCategory(cat) { fetchMultiplePages(p => buildUrl(cat, p), 4); }
+  function searchMovies(query) { fetchMultiplePages(p => `${BASE}/search/movie?api_key=${API_KEY}&language=en-US&query=${encodeURIComponent(query)}&page=${p}&include_adult=false`, 3); }
 
   function render() {
-    if (currentMovies.length === 0) {
-      noResults.classList.add('show');
-      return;
-    }
-    // Build grid with ad banners injected every 8 movies
-    const movieCards = currentMovies.map(m => {
+    if (currentMovies.length === 0) { noResults.classList.add('show'); return; }
+
+    // Build movie cards
+    const fragment = document.createDocumentFragment();
+    let movieCount = 0;
+    const adTypes = [makeAdNode_300x250, makeAdNode_728x90, makeAdNode_468x60];
+    let adIndex = 0;
+
+    currentMovies.forEach((m, idx) => {
       const year = m.release_date ? m.release_date.slice(0, 4) : 'TBA';
       const rating = m.vote_average ? m.vote_average.toFixed(1) : 'N/A';
       const poster = m.poster_path ? `${IMG}${m.poster_path}` : '';
       const safeTitle = (m.title || '').replace(/"/g, '&quot;');
       const isNew = m.release_date && new Date(m.release_date).getFullYear() >= 2025;
-      return `
-        <article class="movie" data-id="${m.id}">
-          <div class="poster" style="background-image: url('${poster}')">
-            <div class="top">
-              <span>${year}</span>
-              ${isNew ? '<span class="badge">NEW</span>' : ''}
-            </div>
-            <div class="title">${safeTitle}</div>
-            <div class="bottom">
-              <span>${(m.original_language || '').toUpperCase()}</span>
-              <span class="rating">★ ${rating}</span>
-            </div>
+
+      const article = document.createElement('article');
+      article.className = 'movie';
+      article.dataset.id = m.id;
+      article.innerHTML = `
+        <div class="poster" style="background-image:url('${poster}')">
+          <div class="top">
+            <span>${year}</span>
+            ${isNew ? '<span class="badge">NEW</span>' : ''}
           </div>
-          <div class="info">
-            <h3>${safeTitle}</h3>
-            <p>${year} · ★ ${rating}</p>
+          <div class="title">${safeTitle}</div>
+          <div class="bottom">
+            <span>${(m.original_language || '').toUpperCase()}</span>
+            <span class="rating">★ ${rating}</span>
           </div>
-        </article>
+        </div>
+        <div class="info">
+          <h3>${safeTitle}</h3>
+          <p>${year} · ★ ${rating}</p>
+        </div>
       `;
-    });
+      article.addEventListener('click', () => openModal(m.id));
+      fragment.appendChild(article);
+      movieCount++;
 
-
-    // Inject ads every 8 movie cards
-    const _AD_300x250 = `<div class="grid-ad"><div class="ad-label">Advertisement</div>
-<script>atOptions={'key':'ec2b4b53adbc239be103063b902d04a0','format':'iframe','height':250,'width':300,'params':{}};` + `<\/script>
-<script src="https://www.highperformanceformat.com/ec2b4b53adbc239be103063b902d04a0/invoke.js"><\/script></div>`;
-
-    let _finalHTML = '';
-    movieCards.forEach((_card, _idx) => {
-      _finalHTML += _card;
-      if ((_idx + 1) % 8 === 0 && _idx !== movieCards.length - 1) {
-        _finalHTML += _AD_300x250;
+      // Insert ad every 6 movies
+      if (movieCount % 6 === 0 && idx !== currentMovies.length - 1) {
+        const adFn = adTypes[adIndex % adTypes.length];
+        fragment.appendChild(adFn());
+        adIndex++;
       }
     });
-    grid.innerHTML = _finalHTML;
+
+    grid.innerHTML = '';
+    grid.appendChild(fragment);
+
     totalEl.textContent = currentMovies.length;
     countEl.textContent = currentMovies.length;
 
-    // Wire up clicks and observe for animation
-    const cards = grid.querySelectorAll('.movie');
-    cards.forEach(card => {
-      card.addEventListener('click', () => openModal(card.dataset.id));
-    });
-
-    // Scroll-in animation via IntersectionObserver
+    // Intersection observer for animations
     const io = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -1410,7 +1134,7 @@
         }
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-    cards.forEach(c => io.observe(c));
+    grid.querySelectorAll('.movie').forEach(c => io.observe(c));
   }
 
   async function openModal(id) {
@@ -1458,66 +1182,131 @@
         { name: 'VidSrc.to', url: `https://vidsrc.to/embed/movie/${id}` },
         { name: 'VidSrc.dev', url: `https://vidsrc.dev/embed/movie/${id}` }
       ];
-      modalTrailerWrap.innerHTML = `
-        <div class="modal-section-title">⟶ Watch Movie</div>
-        <div class="server-tabs">
-          ${servers.map((s, i) => `<button class="server-btn ${i===0?'active':''}" data-url="${s.url}">${s.name}</button>`).join('')}
-        </div>
-        <div class="player-wrap" id="playerWrap">
-          <button class="fs-btn" id="fsBtn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M8 3H5a2 2 0 0 0-2 2v3"/>
-              <path d="M21 8V5a2 2 0 0 0-2-2h-3"/>
-              <path d="M3 16v3a2 2 0 0 0 2 2h3"/>
-              <path d="M16 21h3a2 2 0 0 0 2-2v-3"/>
-            </svg>
-            FULLSCREEN
-          </button>
-          <iframe id="moviePlayer" class="modal-trailer"
-            src="${servers[0].url}"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-            allowfullscreen webkitallowfullscreen mozallowfullscreen
-            referrerpolicy="origin" loading="lazy"></iframe>
-        </div>
-        <a class="open-external" href="${servers[0].url}" target="_blank" rel="noopener" id="openExternal">⟶ Open in new tab</a>
-        <p class="player-note">
-          ⚠ Player blank ho ya na chale → naya server try karo, ya "Open in new tab" tap karo. Pakistan/India mein <b>1.1.1.1 Cloudflare WARP</b> VPN on rakho.
-        </p>
-        <div class="modal-ad">
-          <div class="ad-label">Advertisement</div>
-          <script>atOptions={'key':'0ec6520605740ebc09f5662baa0dd646','format':'iframe','height':90,'width':728,'params':{}};` + `<\/script>
-          <script src="https://www.highperformanceformat.com/0ec6520605740ebc09f5662baa0dd646/invoke.js"><\/script>
-        </div>
-        <div class="modal-ad">
-          <div class="ad-label">Advertisement</div>
-          <script>atOptions={'key':'ec2b4b53adbc239be103063b902d04a0','format':'iframe','height':250,'width':300,'params':{}};` + `<\/script>
-          <script src="https://www.highperformanceformat.com/ec2b4b53adbc239be103063b902d04a0/invoke.js"><\/script>
-        </div>
-      `;
 
-      const openExtLink = document.getElementById('openExternal');
-      const playerWrap = document.getElementById('playerWrap');
-      const fsBtn = document.getElementById('fsBtn');
+      // Build modal content using DOM (avoids inline script issues)
+      const watchSection = document.createElement('div');
 
-      modalTrailerWrap.querySelectorAll('.server-btn').forEach(btn => {
+      const sectionTitle = document.createElement('div');
+      sectionTitle.className = 'modal-section-title';
+      sectionTitle.textContent = '⟶ Watch Movie';
+      watchSection.appendChild(sectionTitle);
+
+      const serverTabs = document.createElement('div');
+      serverTabs.className = 'server-tabs';
+      servers.forEach((s, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'server-btn' + (i === 0 ? ' active' : '');
+        btn.dataset.url = s.url;
+        btn.textContent = s.name;
+        serverTabs.appendChild(btn);
+      });
+      watchSection.appendChild(serverTabs);
+
+      const playerWrap = document.createElement('div');
+      playerWrap.className = 'player-wrap';
+      playerWrap.id = 'playerWrap';
+
+      const fsBtn = document.createElement('button');
+      fsBtn.className = 'fs-btn';
+      fsBtn.id = 'fsBtn';
+      fsBtn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg> FULLSCREEN`;
+      playerWrap.appendChild(fsBtn);
+
+      const iframe = document.createElement('iframe');
+      iframe.id = 'moviePlayer';
+      iframe.className = 'modal-trailer';
+      iframe.src = servers[0].url;
+      iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen');
+      iframe.setAttribute('allowfullscreen', '');
+      iframe.setAttribute('webkitallowfullscreen', '');
+      iframe.setAttribute('mozallowfullscreen', '');
+      iframe.setAttribute('referrerpolicy', 'origin');
+      iframe.setAttribute('loading', 'lazy');
+      playerWrap.appendChild(iframe);
+      watchSection.appendChild(playerWrap);
+
+      // ===== MODAL AD 1: after player (728x90) =====
+      const modalAd1 = document.createElement('div');
+      modalAd1.className = 'modal-ad';
+      const ma1label = document.createElement('div');
+      ma1label.className = 'ad-label';
+      ma1label.textContent = 'Advertisement';
+      modalAd1.appendChild(ma1label);
+      const ma1s1 = document.createElement('script');
+      ma1s1.text = "atOptions={'key':'0ec6520605740ebc09f5662baa0dd646','format':'iframe','height':90,'width':728,'params':{}};";
+      modalAd1.appendChild(ma1s1);
+      const ma1s2 = document.createElement('script');
+      ma1s2.src = 'https://www.highperformanceformat.com/0ec6520605740ebc09f5662baa0dd646/invoke.js';
+      modalAd1.appendChild(ma1s2);
+      watchSection.appendChild(modalAd1);
+
+      const openExtLink = document.createElement('a');
+      openExtLink.className = 'open-external';
+      openExtLink.href = servers[0].url;
+      openExtLink.target = '_blank';
+      openExtLink.rel = 'noopener';
+      openExtLink.id = 'openExternal';
+      openExtLink.textContent = '⟶ Open in new tab';
+      watchSection.appendChild(openExtLink);
+
+      const playerNote = document.createElement('p');
+      playerNote.className = 'player-note';
+      playerNote.innerHTML = '⚠ Player blank ho ya na chale → naya server try karo, ya "Open in new tab" tap karo. Pakistan/India mein <b>1.1.1.1 Cloudflare WARP</b> VPN on rakho.';
+      watchSection.appendChild(playerNote);
+
+      // ===== MODAL AD 2: 300x250 =====
+      const modalAd2 = document.createElement('div');
+      modalAd2.className = 'modal-ad';
+      const ma2label = document.createElement('div');
+      ma2label.className = 'ad-label';
+      ma2label.textContent = 'Advertisement';
+      modalAd2.appendChild(ma2label);
+      const ma2s1 = document.createElement('script');
+      ma2s1.text = "atOptions={'key':'ec2b4b53adbc239be103063b902d04a0','format':'iframe','height':250,'width':300,'params':{}};";
+      modalAd2.appendChild(ma2s1);
+      const ma2s2 = document.createElement('script');
+      ma2s2.src = 'https://www.highperformanceformat.com/ec2b4b53adbc239be103063b902d04a0/invoke.js';
+      modalAd2.appendChild(ma2s2);
+      watchSection.appendChild(modalAd2);
+
+      // ===== MODAL AD 3: 468x60 =====
+      const modalAd3 = document.createElement('div');
+      modalAd3.className = 'modal-ad';
+      const ma3label = document.createElement('div');
+      ma3label.className = 'ad-label';
+      ma3label.textContent = 'Advertisement';
+      modalAd3.appendChild(ma3label);
+      const ma3s1 = document.createElement('script');
+      ma3s1.text = "atOptions={'key':'9034fb899f3dc110d28d2230af2d6470','format':'iframe','height':60,'width':468,'params':{}};";
+      modalAd3.appendChild(ma3s1);
+      const ma3s2 = document.createElement('script');
+      ma3s2.src = 'https://www.highperformanceformat.com/9034fb899f3dc110d28d2230af2d6470/invoke.js';
+      modalAd3.appendChild(ma3s2);
+      watchSection.appendChild(modalAd3);
+
+      modalTrailerWrap.appendChild(watchSection);
+
+      // Server switching
+      serverTabs.querySelectorAll('.server-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-          modalTrailerWrap.querySelectorAll('.server-btn').forEach(b => b.classList.remove('active'));
+          serverTabs.querySelectorAll('.server-btn').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
-          document.getElementById('moviePlayer').src = btn.dataset.url;
+          iframe.src = btn.dataset.url;
           openExtLink.href = btn.dataset.url;
         });
       });
 
+      // Fullscreen
       fsBtn.addEventListener('click', async () => {
         const isFS = playerWrap.classList.contains('fullscreen');
         if (!isFS) {
           playerWrap.classList.add('fullscreen');
-          fsBtn.lastChild.textContent = ' EXIT';
+          fsBtn.textContent = '✕ EXIT';
           try { if (playerWrap.requestFullscreen) await playerWrap.requestFullscreen(); else if (playerWrap.webkitRequestFullscreen) playerWrap.webkitRequestFullscreen(); } catch(e) {}
           try { if (screen.orientation && screen.orientation.lock) await screen.orientation.lock('landscape').catch(() => {}); } catch(e) {}
         } else {
           playerWrap.classList.remove('fullscreen');
-          fsBtn.lastChild.textContent = ' FULLSCREEN';
+          fsBtn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg> FULLSCREEN`;
           try { if (document.exitFullscreen) await document.exitFullscreen(); else if (document.webkitExitFullscreen) document.webkitExitFullscreen(); } catch(e) {}
           try { if (screen.orientation && screen.orientation.unlock) screen.orientation.unlock(); } catch(e) {}
         }
@@ -1526,9 +1315,10 @@
       document.addEventListener('fullscreenchange', () => {
         if (!document.fullscreenElement && playerWrap.classList.contains('fullscreen')) {
           playerWrap.classList.remove('fullscreen');
-          if (fsBtn.lastChild) fsBtn.lastChild.textContent = ' FULLSCREEN';
+          fsBtn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg> FULLSCREEN`;
         }
       });
+
     } catch (err) {
       modalOverview.textContent = 'Failed to load details.';
     }
@@ -1545,12 +1335,10 @@
     if (e.key === 'Escape' && modal.classList.contains('show')) closeModal();
   });
 
-  // Search
   input.addEventListener('input', e => {
     const q = e.target.value.trim();
     clearBtn.classList.toggle('visible', q.length > 0);
     document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
-
     clearTimeout(searchTimeout);
     if (q.length === 0) {
       document.querySelector('.chip').classList.add('active');
@@ -1566,10 +1354,7 @@
       e.preventDefault();
       input.blur();
       const q = input.value.trim();
-      if (q.length > 0) {
-        clearTimeout(searchTimeout);
-        searchMovies(q);
-      }
+      if (q.length > 0) { clearTimeout(searchTimeout); searchMovies(q); }
     }
   });
 
@@ -1581,7 +1366,7 @@
     loadCategory(CATEGORIES[0]);
   });
 
-  // Cursor glow follow (desktop)
+  // Cursor glow
   let mouseX = 0, mouseY = 0, glowX = 0, glowY = 0;
   window.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; });
   function animateGlow() {
@@ -1592,18 +1377,7 @@
   }
   animateGlow();
 
-  // Init
-  renderCategories();
-  loadCategory(CATEGORIES[0]);
-</script>
-
-<div id="stickyBottomAd" style="position:fixed;bottom:0;left:0;right:0;z-index:9998;text-align:center;background:rgba(10,10,15,0.97);border-top:1px solid rgba(255,56,96,0.25);padding:4px 0;">
-  <div style="font-family:JetBrains Mono,monospace;font-size:7px;letter-spacing:0.15em;color:rgba(255,255,255,0.12);text-transform:uppercase;margin-bottom:3px;">Advertisement</div>
-  <script>atOptions={'key':'01406bf2f9da45b9b284191991fec8ea','format':'iframe','height':50,'width':320,'params':{}};</script>
-<script src="https://www.highperformanceformat.com/01406bf2f9da45b9b284191991fec8ea/invoke.js"></script>
-</div>
-<script>
-  // Only show sticky on mobile, hide when modal is open
+  // Sticky bottom ad visibility
   var _sba = document.getElementById('stickyBottomAd');
   function _checkModal() {
     if (document.getElementById('modal').classList.contains('show')) {
@@ -1614,45 +1388,15 @@
   }
   _checkModal();
   var _mo = new MutationObserver(_checkModal);
-  _mo.observe(document.getElementById('modal'), {attributes:true, attributeFilter:['class']});
-</script>
+  _mo.observe(document.getElementById('modal'), { attributes: true, attributeFilter: ['class'] });
 
-<div id="sidebarLeft" style="position:fixed;top:50%;left:0;transform:translateY(-50%);z-index:9997;display:none;">
-<script>atOptions={'key':'92da101dd8a978897918e92d2ea916b9','format':'iframe','height':300,'width':160,'params':{}};</script>
-<script src="https://www.highperformanceformat.com/92da101dd8a978897918e92d2ea916b9/invoke.js"></script>
-</div>
-<div id="sidebarRight" style="position:fixed;top:50%;right:0;transform:translateY(-50%);z-index:9997;display:none;">
-<script>atOptions={'key':'92da101dd8a978897918e92d2ea916b9','format':'iframe','height':300,'width':160,'params':{}};</script>
-<script src="https://www.highperformanceformat.com/92da101dd8a978897918e92d2ea916b9/invoke.js"></script>
-</div>
-<script>
+  // Sidebar ads on wide screens
   if (window.innerWidth >= 1400) {
     document.getElementById('sidebarLeft').style.display = 'block';
     document.getElementById('sidebarRight').style.display = 'block';
   }
-</script>
-<script>
-  // App install modal functions
-  function showAndroidInstall(e) {
-    e.preventDefault();
-    document.getElementById('androidModal').classList.add('show');
-  }
-  function showIOSInstall() {
-    document.getElementById('iosModal').classList.add('show');
-  }
-  function showPWABuilder() {
-    window.open('https://www.pwabuilder.com/reportcard?site=https://cinverse-henna.vercel.app/', '_blank');
-  }
 
-  // Close modals on backdrop click
-  document.getElementById('androidModal').addEventListener('click', function(e) {
-    if (e.target === this) this.classList.remove('show');
-  });
-  document.getElementById('iosModal').addEventListener('click', function(e) {
-    if (e.target === this) this.classList.remove('show');
-  });
-
-  // PWA install prompt (Android Chrome native)
+  // PWA install prompt
   let deferredPrompt;
   window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
@@ -1665,14 +1409,34 @@
         deferredPrompt.prompt();
         const { outcome } = await deferredPrompt.userChoice;
         deferredPrompt = null;
-        if (outcome === 'accepted') {
-          document.getElementById('appBanner').style.display = 'none';
-        }
+        if (outcome === 'accepted') document.getElementById('appBanner').style.display = 'none';
       } else {
         showAndroidInstall(ev);
       }
     };
   });
+
+  function showAndroidInstall(e) {
+    e.preventDefault();
+    document.getElementById('androidModal').classList.add('show');
+  }
+  function showIOSInstall() {
+    document.getElementById('iosModal').classList.add('show');
+  }
+  function showPWABuilder() {
+    window.open('https://www.pwabuilder.com/reportcard?site=https://cinverse-henna.vercel.app/', '_blank');
+  }
+
+  document.getElementById('androidModal').addEventListener('click', function(e) {
+    if (e.target === this) this.classList.remove('show');
+  });
+  document.getElementById('iosModal').addEventListener('click', function(e) {
+    if (e.target === this) this.classList.remove('show');
+  });
+
+  // Init
+  renderCategories();
+  loadCategory(CATEGORIES[0]);
 </script>
 </body>
 </html>
